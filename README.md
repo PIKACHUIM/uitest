@@ -53,7 +53,7 @@ npx serve .
 
 ```
 index.html?lang=ja&theme=dark      # 指定语言与主题
-style.html?s=neo-brutalist        # 指定风格（支持 StyleKit slug 别名）
+style.html?s=neubrutalism         # 指定风格（支持 StyleKit slug 别名与名称前缀）
 ```
 
 ## 部署

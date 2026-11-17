@@ -1046,10 +1046,23 @@
     const params = new URLSearchParams(location.search);
     const id = params.get('s');
     const list = (window.CATALOG && window.CATALOG.styles) || [];
-    style = list.find((s) => s.id === id) || list.find((s) => s.sk === id) || list[0];
-    if (!style) return false;
+    const key = (id || '').toLowerCase();
+    style = list.find((s) => s.id === id)
+      || list.find((s) => s.sk === id)
+      || (key ? list.find((s) => s.id.startsWith(key + '-')) : null)
+      || (key ? list.find((s) => s.demo && s.demo.toLowerCase().endsWith('/' + key + '.html')) : null);
+    if (!style && !id && list.length) style = list[0];
+    if (!style) {
+      // An unknown slug should land on the catalogue instead of a random style.
+      if (id && list.length) {
+        try { location.replace('index.html'); } catch { }
+      }
+      return false;
+    }
     if (id !== style.id) {
-      try { history.replaceState(null, '', 'style.html?s=' + encodeURIComponent(style.id)); } catch { }
+      const next = new URLSearchParams(params);
+      next.set('s', style.id);
+      try { history.replaceState(null, '', 'style.html?' + next.toString()); } catch { }
     }
     scheme = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
     return true;

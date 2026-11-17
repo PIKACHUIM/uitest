@@ -405,7 +405,11 @@
         if (attr && key) el.setAttribute(attr, ATLAS.t(key));
       });
     });
-    if (document.body.dataset.titleKey) document.title = ATLAS.t(document.body.dataset.titleKey);
+    if (document.body.dataset.titleKey) {
+      document.title = ATLAS.t(document.body.dataset.titleKey);
+    } else if ($('#grid')) {
+      document.title = `${ATLAS.t('brand')} — ${ATLAS.t('heroKicker')}`;
+    }
     syncLangModal();
     updateThemeButton();
   }
