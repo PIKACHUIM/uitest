@@ -279,7 +279,7 @@
                 <span class="brand-mark">${ICONS.spark}</span>
                 <span class="brand-text"><strong data-i18n="brand">UI Style Atlas</strong><small data-i18n="brandSub">StyleKit × UI/UX Pro Max</small></span>
               </a>
-              <p style="margin-top:14px;max-width:38ch;font-size:13px;color:var(--ink-3)" data-i18n="footerTagline"></p>
+              <p style="margin-top:14px;max-width:38ch;font-size:13px;color:var(--ink-3);text-wrap:balance" data-i18n="footerTagline"></p>
             </div>
             <div>
               <h4 data-i18n="footerColProject"></h4>

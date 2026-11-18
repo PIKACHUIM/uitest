@@ -187,17 +187,23 @@ img, svg { display: block; }
   text-wrap: balance;
 }
 .hero h1 .grad {
+  display: block;
   background: linear-gradient(105deg, var(--accent) 0%, #4f8df7 55%, #a855f7 100%);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent; color: transparent;
+  text-wrap: balance;
 }
 .hero-lead {
   margin-top: 18px;
   max-width: 62ch;
   font-size: 16px;
   color: var(--ink-2);
+  text-wrap: balance;
 }
 .hero-actions { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
+/* Korean breaks between words, not between syllables. */
+html[lang="ko"] .hero h1,
+html[lang="ko"] .hero-lead { word-break: keep-all; }
 
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
