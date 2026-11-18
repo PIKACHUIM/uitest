@@ -603,8 +603,6 @@
     applyTheme();
     applyLang();
     buildToolbar();
-    const stats = { styles: ATLAS.styles.length, categories: CATS.length, languages: window.I18N.locales.length, sources: 3 };
-    $$('[data-stat]').forEach((el) => { el.textContent = String(stats[el.dataset.stat] || ''); });
     const upd = $('#footerUpdated');
     if (upd) {
       const d = (window.CATALOG && window.CATALOG.generatedAt || new Date().toISOString()).slice(0, 10);

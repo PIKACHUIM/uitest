@@ -221,17 +221,6 @@ html[lang="ko"] .hero-lead { word-break: keep-all; }
 .btn-ghost:hover { border-color: var(--line-strong); background: var(--surface-2); }
 .btn-sm { height: 34px; padding-inline: 12px; font-size: 12.5px; border-radius: 9px; }
 
-.stats {
-  margin-top: 44px;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.stat { padding: 18px 20px; border-inline-start: 1px solid var(--line); }
-.stat:first-child { border-inline-start: 0; padding-inline-start: 0; }
-.stat b { display: block; font-size: 26px; font-weight: 650; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
-.stat span { font-size: 12px; color: var(--ink-3); }
 
 /* ---------------------------------- toolbar ------------------------------- */
 .library { padding-block: 26px 80px; }
@@ -987,8 +976,6 @@ pre.code::-webkit-scrollbar-thumb { background: var(--line-strong); border-radiu
 
 /* ---------------- responsive ---------------- */
 @media (max-width: 900px) {
-  .stats { grid-template-columns: repeat(2, 1fr); }
-  .stat:nth-child(3) { border-inline-start: 0; padding-inline-start: 0; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
